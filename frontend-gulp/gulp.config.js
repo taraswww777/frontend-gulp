@@ -19,6 +19,10 @@ const config = {
 		ASSETS: PATH_DIST + '/assets',
 		IMG: PATH_DIST + '/img',
 	},
+	browserSync:{
+		baseDir:'../www',
+		watch:'../www/**'
+	}
 };
 
 module.exports = config;

@@ -5,11 +5,12 @@ const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const newer = require('gulp-newer');
 const imagemin = require('gulp-imagemin');
-const sass = require('gulp-sass');// компиляция sass/scss  в css
+const sass = require('gulp-sass');
 const sourceMaps = require('gulp-sourcemaps');
 const argv = require('yargs').argv;
 const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync').create();
 
 
 const isDev = !argv.NODE_ENV || argv.NODE_ENV === 'dev';
@@ -64,4 +65,14 @@ gulp.task('watch', () => {
 });
 
 
-gulp.task('dev', gulp.series('build', 'watch'));
+gulp.task('server', () => {
+	browserSync.init({
+		server: {
+			baseDir: CONFIG.browserSync.baseDir
+		}
+	});
+
+	browserSync.watch(CONFIG.browserSync.watch).on('change', browserSync.reload);
+});
+
+gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'server')));

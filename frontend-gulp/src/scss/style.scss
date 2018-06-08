@@ -5,7 +5,9 @@ html {
 .block {
 	background-image: url('../assets/img/sFQEtM54z6o.jpg');
 	background-repeat: no-repeat;
-	padding-left: 10px;
+	padding-left: 60px;
+	min-height: calc(100vh + 500px);
+	color: red;
 }
 
 input {
