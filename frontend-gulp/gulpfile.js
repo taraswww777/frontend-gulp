@@ -11,17 +11,27 @@ const argv = require('yargs').argv;
 const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
 
 
 const isDev = !argv.NODE_ENV || argv.NODE_ENV === 'dev';
 
-console.log('isDev: ', isDev);
+let notifyOnError = notify.onError((err) => {
+		return {
+			title: 'notifyOnError',
+			message: err.message
+		}
+	});
 
 gulp.task('sass', () => {
 	return gulp.src(CONFIG.SRC.SASS)
-		.pipe(autoprefixer())
+		.pipe(plumber({
+			errHandler: notifyOnError
+		}))
 		.pipe(gulpIf(isDev, sourceMaps.init()))
 		.pipe(sass())
+		.pipe(autoprefixer())
 		.pipe(gulpIf(isDev, sourceMaps.write()))
 		.pipe(gulp.dest(CONFIG.DIST.SASS));
 });
