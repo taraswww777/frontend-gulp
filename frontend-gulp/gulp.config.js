@@ -1,11 +1,14 @@
 'use strict';
 
+const argv = require('yargs').argv;
+
 const PATH_SRC = './src';
 
 const PATH_DIST = '../www/dist';
 
-
 const config = {
+	gulp_tasks: './gulpfile.tasks/',
+	isDev: argv.NODE_ENV === 'dev',
 	SRC: {
 		PATH: PATH_SRC,
 		SASS: PATH_SRC + '/scss/*.{sass,scss}',
@@ -19,9 +22,9 @@ const config = {
 		ASSETS: PATH_DIST + '/assets',
 		IMG: PATH_DIST + '/img',
 	},
-	browserSync:{
-		baseDir:'../www',
-		watch:'../www/**'
+	browserSync: {
+		baseDir: '../www',
+		watch: '../www/**'
 	}
 };
 
