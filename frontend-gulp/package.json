@@ -1,0 +1,20 @@
+{
+  "name": "frontend-gulp",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp default --NODE_ENV=dev",
+    "prod": "gulp default --NODE_ENV=prod"
+  },
+  "dependencies": {
+    "gulp-if": "^2.0.2",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
