@@ -9,6 +9,7 @@ const sass = require('gulp-sass');// компиляция sass/scss  в css
 const sourceMaps = require('gulp-sourcemaps');
 const argv = require('yargs').argv;
 const del = require('del');
+const autoprefixer = require('gulp-autoprefixer');
 
 
 const isDev = !argv.NODE_ENV || argv.NODE_ENV === 'dev';
@@ -17,10 +18,11 @@ console.log('isDev: ', isDev);
 
 gulp.task('sass', () => {
 	return gulp.src(CONFIG.SRC.SASS)
+		.pipe(autoprefixer())
 		.pipe(gulpIf(isDev, sourceMaps.init()))
 		.pipe(sass())
 		.pipe(gulpIf(isDev, sourceMaps.write()))
-		.pipe(gulp.dest(CONFIG.DIST.CSS));
+		.pipe(gulp.dest(CONFIG.DIST.SASS));
 });
 
 gulp.task('clean', () => {

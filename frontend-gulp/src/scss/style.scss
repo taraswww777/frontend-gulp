@@ -7,3 +7,9 @@ html {
 	background-repeat: no-repeat;
 	padding-left: 10px;
 }
+
+input {
+	&::placeholder {
+		color: gray;
+	}
+}

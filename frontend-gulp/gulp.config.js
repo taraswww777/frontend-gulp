@@ -15,7 +15,7 @@ const config = {
 
 	DIST: {
 		PATH: PATH_DIST,
-		CSS: PATH_DIST + '/css',
+		SASS: PATH_DIST + '/css',
 		ASSETS: PATH_DIST + '/assets',
 		IMG: PATH_DIST + '/img',
 	},
