@@ -4,7 +4,9 @@ const argv = require('yargs').argv;
 
 const PATH_SRC = './src';
 
-const PATH_DIST = '../www/dist';
+const PATH_WEB_ROOT = '../www';
+
+const PATH_DIST = PATH_WEB_ROOT + '/dist';
 
 const config = {
 	gulp_tasks: './gulpfile.tasks/',
@@ -23,8 +25,11 @@ const config = {
 		IMG: PATH_DIST + '/img',
 	},
 	browserSync: {
-		baseDir: '../www',
-		watch: '../www/**'
+		baseDir: PATH_WEB_ROOT,
+		watch: PATH_WEB_ROOT + '/**'
+	},
+	MANIFEST: {
+		CSS: PATH_WEB_ROOT + '/dist/manifest'
 	}
 };
 
