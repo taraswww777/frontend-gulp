@@ -4,7 +4,6 @@ const CONFIG = require('./gulp.config');
 
 const gulp = require('gulp');
 
-const newer = require('gulp-newer');
 const browserSync = require('browser-sync').create();
 
 
@@ -16,14 +15,8 @@ function lazyLoadTasks(taskName) {
 lazyLoadTasks('sass');
 lazyLoadTasks('clean');
 lazyLoadTasks('assets');
+lazyLoadTasks('images');
 
-
-
-gulp.task('images', () => {
-	return gulp.src(CONFIG.SRC.IMG, {since: gulp.lastRun('images')})
-		.pipe(newer(CONFIG.DIST.IMG))
-		.pipe(gulp.dest(CONFIG.DIST.IMG))
-});
 
 gulp.task('build', gulp.series('clean',
 	gulp.parallel('sass', 'assets', 'images')
