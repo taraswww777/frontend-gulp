@@ -8,7 +8,7 @@ const notify = require('gulp-notify');
 const CONFIG = require('../gulp.config');
 
 
-module.exports = function () {
+module.exports = () => {
 	return combine(
 		gulp.src(CONFIG.SRC.SASS),
 		_.if(CONFIG.isDev, sourceMaps.init()),

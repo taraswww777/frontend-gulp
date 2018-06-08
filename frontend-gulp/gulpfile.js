@@ -14,14 +14,10 @@ function lazyLoadTasks(taskName) {
 }
 
 lazyLoadTasks('sass');
-lazyLoadTasks('clear');
+lazyLoadTasks('clean');
+lazyLoadTasks('assets');
 
 
-gulp.task('assets', () => {
-	return gulp.src(CONFIG.SRC.ASSETS, {since: gulp.lastRun('assets')})
-		.pipe(newer(CONFIG.DIST.ASSETS))
-		.pipe(gulp.dest(CONFIG.DIST.ASSETS))
-});
 
 gulp.task('images', () => {
 	return gulp.src(CONFIG.SRC.IMG, {since: gulp.lastRun('images')})
