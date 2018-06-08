@@ -4,8 +4,9 @@
   "main": "gulpfile.js",
   "license": "MIT",
   "scripts": {
-    "dev": "gulp default --NODE_ENV=dev",
-    "prod": "gulp default --NODE_ENV=prod"
+    "dev": "gulp dev --NODE_ENV=dev",
+    "build": "gulp build --NODE_ENV=prod",
+    "prod": "gulp build --NODE_ENV=prod"
   },
   "dependencies": {
     "gulp-if": "^2.0.2",

@@ -31,11 +31,14 @@ gulp.task('assets', () => {
 		.pipe(gulp.dest(CONFIG.DIST.ASSETS))
 });
 
-gulp.task('default', gulp.series('clean',
+gulp.task('build', gulp.series('clean',
 	gulp.parallel('sass', 'assets')
 ));
 
+gulp.task('watch', () => {
+	gulp.watch(CONFIG.SRC.SASS, gulp.series('sass'));
+	gulp.watch(CONFIG.SRC.ASSETS, gulp.series('assets'));
+});
 
-gulp.watch(CONFIG.SRC.SASS, gulp.series('sass'));
-gulp.watch(CONFIG.SRC.ASSETS, gulp.series('assets'));
 
+gulp.task('dev', gulp.series('build', 'watch'));
