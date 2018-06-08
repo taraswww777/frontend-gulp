@@ -5,7 +5,6 @@ const CONFIG = require('./gulp.config');
 const gulp = require('gulp');
 
 const newer = require('gulp-newer');
-const del = require('del');
 const browserSync = require('browser-sync').create();
 
 
@@ -15,10 +14,7 @@ function lazyLoadTasks(taskName) {
 }
 
 lazyLoadTasks('sass');
-
-gulp.task('clean', () => {
-	return del(CONFIG.DIST.PATH, {force: true})
-});
+lazyLoadTasks('clear');
 
 
 gulp.task('assets', () => {
