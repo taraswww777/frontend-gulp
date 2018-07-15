@@ -15,10 +15,11 @@ lazyLoadTasks('clean');
 lazyLoadTasks('assets');
 lazyLoadTasks('images');
 lazyLoadTasks('server');
+lazyLoadTasks('webpack');
 
 
 gulp.task('build', gulp.series('clean',
-	gulp.parallel('sass', 'assets', 'images')
+		gulp.parallel('sass', 'assets', 'images', 'webpack')
 ));
 
 gulp.task('watch', () => {
@@ -27,4 +28,5 @@ gulp.task('watch', () => {
 	gulp.watch(CONFIG.SRC.IMG, gulp.series('images'));
 });
 
-gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'server')));
+gulp.task('dev',  gulp.parallel('build','watch'));
+gulp.task('dev:server', gulp.series('build', gulp.parallel('watch', 'server')));

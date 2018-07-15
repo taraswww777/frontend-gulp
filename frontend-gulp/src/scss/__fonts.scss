@@ -1,0 +1,27 @@
+$ff-Ubuntu: 'Ubuntu';
+$fw-thin: 100;
+$fw-li: 100;
+
+$fw-Thin: 100;
+$fw-ExtraLight: 200;
+$fw-Light: 300;
+$fw-Normal: 400;
+$fw-Medium: 500;
+$fw-SemiBold: 600;
+$fw-Bold: 700;
+$fw-ExtraBold: 800;
+$fw-Black: 900;
+
+$fw-Hairline: $fw-Thin;
+$fw-UltraLight: $fw-ExtraLight;
+$fw-DemiBold:$fw-SemiBold;
+$fw-UltraBold:$fw-ExtraBold;
+$fw-Heavy:$fw-Black;
+
+//@font-face {  font-family: $ff-Ubuntu;  src: url('../assets/fonts/Ubuntu/UbuntuThin/UbuntuThin.eot');  src: url('../assets/fonts/Ubuntu/UbuntuThin/UbuntuThin.eot?iefix') format('eot'), url('../assets/fonts/Ubuntu/UbuntuThin/UbuntuThin.woff') format('woff'), url('../assets/fonts/Ubuntu/UbuntuThin/UbuntuThin.ttf') format('truetype');  font-style: normal;  font-weight: $fw-Thin;  }
+//@font-face {  font-family: $ff-Ubuntu;  src: url('../assets/fonts/Ubuntu/UbuntuLight/UbuntuLight.eot');  src: url('../assets/fonts/Ubuntu/UbuntuLight/UbuntuLight.eot?iefix') format('eot'), url('../assets/fonts/Ubuntu/UbuntuLight/UbuntuLight.woff') format('woff'), url('../assets/fonts/Ubuntu/UbuntuLight/UbuntuLight.ttf') format('truetype');  font-style: normal;  font-weight: $fw-Light;  }
+//@font-face {  font-family: $ff-Ubuntu;  src: url('../assets/fonts/Ubuntu/UbuntuRegular/UbuntuRegular.eot');  src: url('../assets/fonts/Ubuntu/UbuntuRegular/UbuntuRegular.eot?iefix') format('eot'), url('../assets/fonts/Ubuntu/UbuntuRegular/UbuntuRegular.woff') format('woff'), url('../assets/fonts/Ubuntu/UbuntuRegular/UbuntuRegular.ttf') format('truetype');  font-style: normal;  font-weight: $fw-Normal;  }
+//@font-face {  font-family: $ff-Ubuntu;  src: url('../assets/fonts/Ubuntu/UbuntuExtrabld/UbuntuExtrabld.eot');  src: url('../assets/fonts/Ubuntu/UbuntuExtrabld/UbuntuExtrabld.eot?iefix') format('eot'), url('../assets/fonts/Ubuntu/UbuntuExtrabld/UbuntuExtrabld.woff') format('woff'), url('../assets/fonts/Ubuntu/UbuntuExtrabld/UbuntuExtrabld.ttf') format('truetype');  font-style: normal;  font-weight: $fw-ExtraBold;  }
+//@font-face {  font-family: $ff-Ubuntu;  src: url('../assets/fonts/Ubuntu/UbuntuSemibold/UbuntuSemibold.eot');  src: url('../assets/fonts/Ubuntu/UbuntuSemibold/UbuntuSemibold.eot?iefix') format('eot'), url('../assets/fonts/Ubuntu/UbuntuSemibold/UbuntuSemibold.woff') format('woff'), url('../assets/fonts/Ubuntu/UbuntuSemibold/UbuntuSemibold.ttf') format('truetype');  font-style: normal;  font-weight: $fw-SemiBold;  }
+//@font-face {  font-family: $ff-Ubuntu;  src: url('../assets/fonts/Ubuntu/UbuntuBold/UbuntuBold.eot');  src: url('../assets/fonts/Ubuntu/UbuntuBold/UbuntuBold.eot?iefix') format('eot'), url('../assets/fonts/Ubuntu/UbuntuBold/UbuntuBold.woff') format('woff'), url('../assets/fonts/Ubuntu/UbuntuBold/UbuntuBold.ttf') format('truetype');  font-style: normal;  font-weight: $fw-Bold;  }
+//@font-face {  font-family: $ff-Ubuntu;  src: url('../assets/fonts/Ubuntu/UbuntuBlack/UbuntuBlack.eot');  src: url('../assets/fonts/Ubuntu/UbuntuBlack/UbuntuBlack.eot?iefix') format('eot'), url('../assets/fonts/Ubuntu/UbuntuBlack/UbuntuBlack.woff') format('woff'), url('../assets/fonts/Ubuntu/UbuntuBlack/UbuntuBlack.ttf') format('truetype');  font-style: normal;  font-weight: $fw-Black;  }
