@@ -8,8 +8,6 @@ const rename = require('gulp-rename');
 const mergeStream = require('merge-stream');
 
 module.exports = () => {
-	console.log('argv: ', argv);
-
 	let blockName = (argv.b) ? argv.b : 'demo-block';
 	let blockPrefix = (argv.p) ? argv.p : 'b-';
 	let path = '/block/common/' + blockPrefix + blockName;
