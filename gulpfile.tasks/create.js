@@ -9,15 +9,15 @@ const mergeStream = require('merge-stream');
 
 module.exports = () => {
 	let blockName = (argv.b) ? argv.b : 'demo-block';
-	let blockPrefix = (argv.p) ? argv.p : 'b-';
-	let path = '/block/common/' + blockPrefix + blockName;
+	let blockPrefix = (argv.p) ? argv.p : 'b';
+	let path = '/block/common/' + blockPrefix + '-' + blockName;
 
 	let streamSimple = gulp.src(CONFIG.SRC.PATH + '/block/blank/*.{css,less,sass,js,scss}')
 			.pipe(replace('%block-name%', blockName))
-			.pipe(replace('%prefix%', blockPrefix))
+			.pipe(replace('%prefix%', blockPrefix + '-'))
 			.pipe(rename({
 				basename: blockName,
-				prefix: blockPrefix,
+				prefix: blockPrefix + '-',
 			}))
 			.pipe(gulp.dest(CONFIG.SRC.PATH + path));
 
@@ -26,7 +26,7 @@ module.exports = () => {
 			.pipe(replace('%prefix%', blockPrefix))
 			.pipe(rename({
 				basename: blockName,
-				prefix: blockPrefix,
+				prefix: blockPrefix + '-',
 				suffix: '.blade',
 			}))
 			.pipe(gulp.dest(CONFIG.SRC.PATH + path));
