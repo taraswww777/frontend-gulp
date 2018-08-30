@@ -10,15 +10,15 @@
 @if($newsList)
 	<div class="@blockName()">
 		@foreach($newsList as $newsItem)
-			<div class="@blockElem('item')">
-			<a class="@blockElem('item-link')" href="{{$newsItem['LINK']}}">
+			<div class="@elem('item')">
+			<a class="@elem('item-link')" href="{{$newsItem['LINK']}}">
 				@if($newsItem['IMAGE_URL'])
-					<div class="@blockElem('item-wrapper-img')">
-						<img class="@blockElem(item-img)" src="{{$postItem['IMAGE_URL']}}">
+					<div class="@elem('item-wrapper-img')">
+						<img class="@elem(item-img)" src="{{$postItem['IMAGE_URL']}}">
 					</div>
 				@endif
-				<div class="@blockElem('item-wrapper-info')">
-					<div class="@blockElem('item-title')">{{$newsItem['NAME']}}</div>
+				<div class="@elem('item-wrapper-info')">
+					<div class="@elem('item-title')">{{$newsItem['NAME']}}</div>
 				</div>
 			</a>
 			</div>

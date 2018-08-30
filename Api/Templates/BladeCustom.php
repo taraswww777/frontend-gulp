@@ -34,7 +34,7 @@ class BladeCustom extends Blade
 	{
 		$this->addDirective_Block();
 		$this->addDirective_BlockName();
-		$this->addDirective_BlockElement();
+		$this->addDirective_Elem();
 		$this->addDirective_Dump();
 		$this->addDirective_Img();
 		$this->addDirective_Assets();
@@ -78,13 +78,13 @@ class BladeCustom extends Blade
 	}
 
 	/**
-	 * Add directive @blockElem(element-name,[modifier-name= null,[modifier-value= null]])
+	 * Add directive @elem(element-name,[modifier-name= null,[modifier-value= null]])
 	 *
 	 * directive return string  block-name__element-name[--modifier-name[_modifier-value]]
 	 */
-	private function addDirective_BlockElement()
+	private function addDirective_Elem()
 	{
-		$this->compiler()->directive('blockElem', function ($paramsString) {
+		$this->compiler()->directive('elem', function ($paramsString) {
 			$params = explode(',', $paramsString);
 			$nameElement = Tools::clearParamString($params[0]);
 			$modName = (empty($params[1])) ? $params[1] : Tools::clearParamString($params[1]);
