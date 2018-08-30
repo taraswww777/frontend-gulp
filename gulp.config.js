@@ -13,11 +13,21 @@ const PATH_WEB_ROOT = './tests';
 const PATH_DIST = PATH_WEB_ROOT + PATH_BASE_DIST;
 const isWatch = argv.NODE_ENV === 'dev-watch';
 const isDev = argv.NODE_ENV === 'dev' || isWatch;
+
+const cleanCSS_level = {
+	mergeAdjacentRules: true, // controls adjacent rules merging; defaults to true
+	mergeIntoShorthands: true, // controls merging properties into shorthands; defaults to true
+	mergeMedia: true, // controls `@media` merging; defaults to true
+	mergeNonAdjacentRules: true, // controls non-adjacent rule merging; defaults to true
+	mergeSemantically: false, // controls semantic merging; defaults to false
+	mergeMediaQueries: true,
+};
+
 const config = {
 	gulp_tasks: './gulpfile.tasks/',
 	isDev: isDev,
 	isWatch: isWatch,
-	WATCH:{
+	WATCH: {
 		SASS: PATH_SRC + '/**/*.{sass,scss}',
 		ASSETS: PATH_SRC + '/assets/**',
 		IMG: PATH_SRC + '/img/**',
@@ -43,7 +53,7 @@ const config = {
 		watch: PATH_WEB_ROOT + '/**'
 	},
 	MANIFEST: {
-		PATH: path.join(__dirname, PATH_WEB_ROOT + PATH_BASE_DIST+'/manifest'),
+		PATH: path.join(__dirname, PATH_WEB_ROOT + PATH_BASE_DIST + '/manifest'),
 		CSS: 'css.json',
 		WEBPACK: 'js.json',
 	},
@@ -54,7 +64,17 @@ const config = {
 		browsers: ['last 4 versions'],
 		cascade: false
 	},
-	cleanCSS: {debug: isDev, compatibility: 'ie8'}
+	cleanCSS: {
+		// https://github.com/jakubpawlowicz/clean-css#constructor-options
+		debug: isDev,
+		compatibility: 'ie7',
+		level: {
+			0: cleanCSS_level,
+			1: cleanCSS_level,
+			2: cleanCSS_level,
+			3: cleanCSS_level,
+		}
+	}
 };
 
 module.exports = config;
