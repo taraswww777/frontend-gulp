@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "gulpfile.js",
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://taraswww777@bitbucket.org/teamTaraswww777/frontend-gulp.git"
+  },
   "scripts": {
     "dev": "gulp dev --NODE_ENV=dev-watch",
     "dev:server": "gulp dev:server --NODE_ENV=dev",
