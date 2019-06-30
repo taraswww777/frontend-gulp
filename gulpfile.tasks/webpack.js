@@ -26,6 +26,7 @@ module.exports = (callback) => {
 	}
 
 	let options = {
+		mode: CONFIG.isDev ? 'development' : 'production',
 		output: {
 			publicPath: CONFIG.DIST.JS,
 			filename: CONFIG.isDev ? '[name].js' : '[name]-[chunkhash:10].js'
@@ -33,11 +34,14 @@ module.exports = (callback) => {
 		watch: CONFIG.isWatch,
 		devtool: CONFIG.isDev ? 'cheap-module-inline-source-map' : false,
 		module: {
-			loaders: [
+			rules: [
 				{
-					test: '/\.js$/',
-					include: path.join(__dirname, 'src'),
-					loader: 'babel?presets[]=es2015'
+					test: /\.js$/, use: {
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env']
+						}
+					}
 				}
 			]
 		},
