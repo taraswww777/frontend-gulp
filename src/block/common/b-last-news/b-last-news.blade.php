@@ -1,4 +1,4 @@
-@block('last-news')
+@block('b-last-news')
 
 <?php
 /**

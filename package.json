@@ -13,7 +13,7 @@
     "build": "gulp build --NODE_ENV=dev",
     "prod": "gulp build --NODE_ENV=prod",
     "images": "gulp images --NODE_ENV=dev",
-    "create": "gulp create --b=demo-block --p=b-",
+    "create": "gulp create --b=demo-block",
     "yarn": "yarn install",
     "composer-i": "composer install",
     "composer-da": "composer dumpautoload"

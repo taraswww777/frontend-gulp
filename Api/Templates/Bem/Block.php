@@ -4,25 +4,14 @@ namespace FrontendGulp\Api\Templates\Bem;
 
 class Block extends BemEntity
 {
-	const PREFIX_DIVIDER = '-';
-
-	/** @var  string префикс блока */
-	protected $prefix;
 
 	/**
 	 * Block constructor.
 	 * @param string $name - имя блока
-	 * @param string $prefix - префикс блока
 	 */
-	public function __construct($name, $prefix = 'b')
+	public function __construct($name)
 	{
-		$this->setPrefix($prefix);
 		$this->setName($name);
-	}
-
-	public function setPrefix($prefix)
-	{
-		$this->prefix = $prefix;
 	}
 
 	/**
@@ -30,7 +19,7 @@ class Block extends BemEntity
 	 */
 	public function getBemName()
 	{
-		return $this->prefix . self::PREFIX_DIVIDER . $this->name;
+		return $this->name;
 	}
 
 	/**

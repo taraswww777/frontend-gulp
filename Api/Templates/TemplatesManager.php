@@ -56,6 +56,11 @@ class TemplatesManager
 		}
 	}
 
+	public function existsView( $view ) {
+		$viewPathInfo = pathinfo( $view );
+		$viewPath     = $this->tplPath . '/' . $view . '/' . $viewPathInfo['basename'] . '.blade.php';
+		return file_exists( $viewPath );
+	}
 
 	/**
 	 * @param string $view

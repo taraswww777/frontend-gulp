@@ -41,7 +41,7 @@ class BladeCustom extends Blade
 	}
 
 	/**
-	 * Add directive @block(block-name, [block-prefix = b])
+	 * Add directive @block(block-name)
 	 *
 	 * directive return void
 	 */
@@ -50,8 +50,7 @@ class BladeCustom extends Blade
 		$this->compiler()->directive('block', function ($paramsString) {
 			$params = explode(',', $paramsString);
 			$block = (empty($params[0])) ? $params[0] : Tools::clearParamString($params[0]);
-			$prefix = (empty($params[1])) ? 'b' : Tools::clearParamString($params[1]);
-			$this->block = new Block($block, $prefix);
+			$this->block = new Block($block);
 		});
 	}
 

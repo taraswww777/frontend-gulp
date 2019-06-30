@@ -1,4 +1,4 @@
-@block('%block-name%','%prefix%')
+@block('%block-name%')
 @if($why)
 	@foreach($why as $whyItem)
 	<section class="@blockName()">

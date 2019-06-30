@@ -2,7 +2,7 @@ import $ from 'jquery';
 import {Block} from '../../libs/Block';
 
 export class BlockName extends Block {
-    _blockName = '%prefix%%block-name%';
+    _blockName = '%block-name%';
 }
 
 $(document).ready(() => {
