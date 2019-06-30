@@ -6,7 +6,6 @@
  */
 
 
-
 if (!defined('frontendGulpDistPath')) {
 	// Абсолютный путь до дирректории frontend-gulp
 	define('frontendGulpDistPath', '/dist');
@@ -19,15 +18,17 @@ if (!defined('frontendGulpPath')) {
 
 if (!defined('frontendGulpPublicPath')) {
 	// Абсолютный путь до публичной дирректории
-	define('frontendGulpPublicPath', dirname(__DIR__) .'/tests');
+	define('frontendGulpPublicPath', dirname(__DIR__) . '/tests');
 }
 
 if (!defined('frontendGulpPublicUrl')) {
 	// путь от публичной дирректории до сгенерированных файлов
-	define('frontendGulpPublicUrl', frontendGulpDistPath);
 
-	// для WP при нахождении frontend-gulp в корне темы
-	// define('frontendGulpPublicUrl', get_theme_file_uri().'/frontend-gulp'.frontendGulpDistPath);
+	if (defined('ABSPATH') and function_exists('get_theme_file_uri')) {
+		define('frontendGulpPublicUrl', get_theme_file_uri() . '/assets/frontend-gulp' . frontendGulpDistPath);
+	} else {
+		define('frontendGulpPublicUrl', frontendGulpDistPath);
+	}
 }
 
 

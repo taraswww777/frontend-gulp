@@ -41,6 +41,8 @@ class FrontendGulp
 			$path = $this->pathManifest . '/' . $typeManifest . '.json';
 			if (file_exists($path)) {
 				$this->manifest[$typeManifest] = json_decode(file_get_contents($path), true);
+			} else {
+				$this->manifest[$typeManifest] = [];
 			}
 		}
 	}
@@ -77,6 +79,11 @@ class FrontendGulp
 	public function templates()
 	{
 		return $this->templatesManager ? $this->templatesManager : $this->templatesManager = new TemplatesManager();
+	}
+
+	public function existsView($view)
+	{
+		return $this->templates()->existsView($view);
 	}
 
 	public function render($template, $context = [])
