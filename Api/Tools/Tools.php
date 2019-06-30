@@ -8,6 +8,7 @@
 namespace FrontendGulp\Api\Tools;
 
 use FrontendGulp\Api\FrontendGulp;
+use stdClass;
 
 abstract class Tools
 {
@@ -59,5 +60,28 @@ abstract class Tools
 	public static function urlCss($point = 'index')
 	{
 		return FrontendGulp::getInst()->urlCss($point);
+	}
+
+	/**
+	 * @param array $array
+	 * @return object
+	 */
+	public static function arrToObj( $array = [] ) {
+		$obj = new stdClass;
+		foreach ( $array as $k => $v ) {
+			if ( strlen( $k ) ) {
+				if ( is_array( $v ) ) {
+					$obj->{$k} = Tools::arrToObj( $v ); //RECURSION
+				} else {
+					$obj->{$k} = $v;
+				}
+			}
+		}
+
+		return $obj;
+	}
+
+	public static function existsView( $view ) {
+		return FrontendGulp::getInst()->existsView( $view );
 	}
 }
