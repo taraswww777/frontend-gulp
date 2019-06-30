@@ -1,7 +1,10 @@
 import $ from 'jquery';
+import {Block} from '../../libs/Block';
 
-const blockName = '%prefix%%block-name%';
+export class BlockName extends Block {
+    _blockName = '%prefix%%block-name%';
+}
 
 $(document).ready(() => {
-
+    (new BlockName());
 });
